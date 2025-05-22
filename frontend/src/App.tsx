@@ -2,6 +2,7 @@ import { Header } from './components/Header'
 import { About } from './components/About'
 import { Projects } from './components/Projects'
 import { Publications } from './components/Publications'
+import { WorkExperience } from './components/WorkExperience'
 import { ResumeDownload } from './components/ResumeDownload'
 import { Footer } from './components/Footer'
 import './styles/App.css'
@@ -13,6 +14,9 @@ function App() {
       <main className="main">
         <section id="about" className="section">
           <About />
+        </section>
+        <section id="work" className="section">
+          <WorkExperience />
         </section>
         <section id="projects" className="section">
           <Projects />

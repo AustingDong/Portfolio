@@ -6,6 +6,7 @@ export const Header = () => {
 
   const navLinks = [
     { href: '#about', label: 'About' },
+    { href: '#work', label: 'Work Experience' },
     { href: '#projects', label: 'Projects' },
     { href: '#publications', label: 'Publications' },
     { href: '#resume', label: 'Resume' },

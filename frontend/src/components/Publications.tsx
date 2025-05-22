@@ -9,14 +9,14 @@ interface Publication {
 export const Publications = () => {
   const publications: Publication[] = [
     {
-      title: 'AG-CAM: Attention-Guided Class Activation Mapping for Chart-based Visual Question Answering',
-      venue: 'IEEE VIS 2024',
-      link: 'https://ieeevis.org/'
+      title: 'Probing the Visualization Literacy of Vision Language Models: the Good, the Bad, and the Ugly',
+      venue: 'IEEE VIS (Under Review)',
+      link: 'https://arxiv.org/abs/2504.05445'
     },
     {
-      title: 'Personalized Explainability: A User-Centric Approach to AI Model Interpretability',
-      venue: 'ICIAAI 2024',
-      link: 'https://icis.aisnet.org/'
+      title: 'Enhancing Image Segmentation for ICH through Transfer Learning from Stroke MRI to ICH CT',
+      venue: 'ICIAAI',
+      link: 'https://www.atlantis-press.com/proceedings/iciaai-24/126004119'
     }
   ]
 

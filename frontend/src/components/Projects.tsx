@@ -16,23 +16,35 @@ export const Projects = () => {
       ],
       githubLink: 'https://github.com/AustingDong/Probing-Vis-Literacy-of-VLMs'
     },
+    
     {
-      title: 'LoRA Fine-tuning for SDXL',
+      title: 'ICH CT Segmentation via Transfer Learning',
       description: [
-        'Implemented efficient fine-tuning of Stable Diffusion XL using LoRA',
-        'Reduced memory requirements by 90% while maintaining model quality',
-        'Created custom training pipeline for domain-specific image generation'
+        'Led domain adaptation research using Attention U-Net for medical image segmentation',
+        'Preprocessed stroke MRI and ICH CT data with NiBabel and Nilearn',
+        'Published findings at ICIAAI 2024 conference'
       ],
-      githubLink: 'https://github.com/yourusername/sdxl-lora'
+      githubLink: 'https://www.atlantis-press.com/proceedings/iciaai-24/126004119'
     },
+
     {
-      title: 'CHI Submission: Personalized Explainability',
+      title: 'Scotiabank Fraud Detection Challenge',
       description: [
-        'Designed user-centric approach to AI model explainability',
-        'Conducted user studies to evaluate explanation effectiveness',
-        'Developed framework for adaptive explanation generation'
+        'Won 1st place among 500+ participants at University of Waterloo & Scotiabank competition',
+        'Developed XGBoost-based fraud detection model with SMOTE augmentation for imbalanced data',
+        'Optimized F1 score via threshold tuning to reduce fraud cost and improve satisfaction'
       ],
-      githubLink: 'https://github.com/yourusername/personalized-explainability'
+      githubLink: 'https://github.com/joeyuh/OToInfinity-Scotiabank-Competition'
+    },
+
+    {
+      title: 'NASA Space Apps NLP Hackathon',
+      description: [
+        'Received Global Nomination (top 10% of 4500+ teams)',
+        'Built unsupervised NLP model using complex networks and word centrality analysis',
+        'Trained supervised model with TensorFlow to simplify scientific research through web scraping'
+      ],
+      githubLink: 'https://2022.spaceappschallenge.org/challenges/2022-challenges/science-legacy/teams/0to/project'
     }
   ]
 
