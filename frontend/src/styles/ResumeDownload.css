@@ -1,0 +1,49 @@
+.resume {
+  text-align: center;
+}
+
+.resume-header {
+  font-size: 2.25rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.resume-header::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 5rem;
+  height: 0.25rem;
+  background: linear-gradient(to right, #2563eb, #9333ea);
+  border-radius: 9999px;
+}
+
+.resume-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(to right, #2563eb, #9333ea, #1e40af);
+  color: white;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: all 0.3s;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  margin-top: 3rem;
+}
+
+.resume-button:hover {
+  background: linear-gradient(to right, #1d4ed8, #7e22ce, #1e3a8a);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.resume-button-icon {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+} 

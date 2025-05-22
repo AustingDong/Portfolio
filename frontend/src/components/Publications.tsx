@@ -1,0 +1,49 @@
+import '../styles/Publications.css'
+
+interface Publication {
+  title: string
+  venue: string
+  link: string
+}
+
+export const Publications = () => {
+  const publications: Publication[] = [
+    {
+      title: 'AG-CAM: Attention-Guided Class Activation Mapping for Chart-based Visual Question Answering',
+      venue: 'IEEE VIS 2024',
+      link: 'https://ieeevis.org/'
+    },
+    {
+      title: 'Personalized Explainability: A User-Centric Approach to AI Model Interpretability',
+      venue: 'ICIAAI 2024',
+      link: 'https://icis.aisnet.org/'
+    }
+  ]
+
+  return (
+    <div className="publications">
+      <h2 className="publications-header">Publications</h2>
+      <div className="publications-list">
+        {publications.map((pub) => (
+          <div key={pub.title} className="publication-card">
+            <div className="publication-content">
+              <h3 className="publication-title">{pub.title}</h3>
+              <p className="publication-venue">{pub.venue}</p>
+              <a
+                href={pub.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="publication-link"
+              >
+                <svg className="publication-link-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+                View Publication
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+} 
