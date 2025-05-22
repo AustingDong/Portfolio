@@ -9,13 +9,12 @@ interface Project {
 export const Projects = () => {
   const projects: Project[] = [
     {
-      title: 'IEEE VIS: AG-CAM for Chart-based VQA',
+      title: 'IEEE VIS: Probing Vis Literacy of VLMs',
       description: [
-        'Developed an attention-guided Grad-CAM approach for visual question answering on charts',
-        'Improved interpretability of model decisions through enhanced visualization techniques',
-        'Achieved state-of-the-art performance on chart-based VQA benchmarks'
+        'Developed an Attention-guided Grad-CAM approach for visual question answering on charts',
+        'Improved interpretability of model decisions through enhanced visualization techniques'
       ],
-      githubLink: 'https://github.com/yourusername/ag-cam'
+      githubLink: 'https://github.com/AustingDong/Probing-Vis-Literacy-of-VLMs'
     },
     {
       title: 'LoRA Fine-tuning for SDXL',
