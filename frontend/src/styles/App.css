@@ -1,14 +1,44 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
 .app {
   min-height: 100vh;
+  width: 100%;
   background-color: #f9fafb;
+  background-image: 
+    radial-gradient(circle at 100% 0%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 0% 100%, rgba(147, 51, 234, 0.1) 0%, transparent 50%);
+  display: flex;
+  flex-direction: column;
 }
 
 .main {
-  max-width: 72rem;
-  margin: 0 auto;
-  padding: 2rem 1rem;
+  flex: 1;
+  width: 100%;
+  padding: 6rem 0 0;
+  box-sizing: border-box;
 }
 
 .section {
-  margin-bottom: 4rem;
+  width: 100%;
+  padding: 0 2rem 4rem;
+  scroll-margin-top: 6rem;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 5rem 0 0;
+  }
+  
+  .section {
+    padding: 0 1rem 2rem;
+    scroll-margin-top: 5rem;
+  }
 } 

@@ -2,12 +2,26 @@
   background: linear-gradient(to bottom, #111827, #1f2937);
   color: white;
   padding: 3rem 0;
+  width: 100%;
+  margin-top: auto;
 }
 
 .footer-container {
   max-width: 72rem;
+  width: 100%;
   margin: 0 auto;
   padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 0;
+  }
+  
+  .footer-container {
+    padding: 0 1rem;
+  }
 }
 
 .social-links {
