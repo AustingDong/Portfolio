@@ -4,19 +4,42 @@ const path = require('path');
 const distPath = path.join(__dirname, 'frontend', 'dist');
 const targetPath = __dirname;
 
-// List all files in the dist directory
+// Copy individual files
 const files = fs.readdirSync(distPath);
 
-// Copy files to the root directory
 files.forEach(file => {
   const src = path.join(distPath, file);
   const dest = path.join(targetPath, file);
 
-  if (fs.lstatSync(src).isDirectory()) {
-    // Ignore directories, e.g. assets will have problems
-    return;
-  }
+  const stat = fs.lstatSync(src);
 
-  fs.copyFileSync(src, dest);
-  console.log(`Copied ${file} to root directory`);
+  if (stat.isDirectory()) {
+    if (file === 'assets') {
+      // Recursively copy assets folder
+      const copyFolderRecursive = (srcDir, destDir) => {
+        if (!fs.existsSync(destDir)) {
+          fs.mkdirSync(destDir);
+        }
+
+        const items = fs.readdirSync(srcDir);
+
+        items.forEach(item => {
+          const srcItem = path.join(srcDir, item);
+          const destItem = path.join(destDir, item);
+
+          if (fs.lstatSync(srcItem).isDirectory()) {
+            copyFolderRecursive(srcItem, destItem);
+          } else {
+            fs.copyFileSync(srcItem, destItem);
+            console.log(`Copied ${srcItem} → ${destItem}`);
+          }
+        });
+      };
+
+      copyFolderRecursive(src, dest);
+    }
+  } else {
+    fs.copyFileSync(src, dest);
+    console.log(`Copied ${file} to root directory`);
+  }
 });
