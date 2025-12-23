@@ -10,8 +10,8 @@ export const Publications = () => {
   const publications: Publication[] = [
     {
       title: 'Probing the Visualization Literacy of Vision Language Models: the Good, the Bad, and the Ugly',
-      venue: 'IEEE VIS (Under Review)',
-      link: 'https://arxiv.org/abs/2504.05445'
+      venue: 'IEEE TVCG 2025',
+      link: 'https://ieeexplore.ieee.org/document/11261397'
     },
     {
       title: 'Enhancing Image Segmentation for ICH through Transfer Learning from Stroke MRI to ICH CT',
