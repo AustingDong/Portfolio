@@ -9,40 +9,16 @@ interface Project {
 export const Projects = () => {
   const projects: Project[] = [
     {
-      title: 'IEEE VIS: Probing Vis Literacy of VLMs',
-      description: [
-        'Developed an Attention-guided Grad-CAM approach for visual question answering on charts',
-        'Improved interpretability of model decisions through enhanced visualization techniques'
-      ],
-      githubLink: 'https://github.com/AustingDong/Probing-Vis-Literacy-of-VLMs'
-    },
-    
-    {
-      title: 'ICH CT Segmentation via Transfer Learning',
-      description: [
-        'Led domain adaptation research using Attention U-Net for medical image segmentation',
-        'Preprocessed stroke MRI and ICH CT data with NiBabel and Nilearn',
-        'Published findings at ICIAAI 2024 conference'
-      ],
-      githubLink: 'https://www.atlantis-press.com/proceedings/iciaai-24/126004119'
-    },
-
-    {
       title: 'Scotiabank Fraud Detection Challenge',
       description: [
-        'Won 1st place among 500+ participants at University of Waterloo & Scotiabank competition',
-        'Developed XGBoost-based fraud detection model with SMOTE augmentation for imbalanced data',
-        'Optimized F1 score via threshold tuning to reduce fraud cost and improve satisfaction'
+        '1st place among 500+ participants at University of Waterloo & Scotiabank competition',
       ],
       githubLink: 'https://github.com/joeyuh/OToInfinity-Scotiabank-Competition'
     },
 
     {
-      title: 'NASA Space Apps NLP Hackathon',
+      title: 'NASA Space Apps NLP Hackathon (Global Nomination)',
       description: [
-        'Received Global Nomination (top 10% of 4500+ teams)',
-        'Built unsupervised NLP model using complex networks and word centrality analysis',
-        'Trained supervised model with TensorFlow to simplify scientific research through web scraping'
       ],
       githubLink: 'https://2022.spaceappschallenge.org/challenges/2022-challenges/science-legacy/teams/0to/project'
     }

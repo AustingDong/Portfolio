@@ -10,35 +10,55 @@ html, body {
 .app {
   min-height: 100vh;
   width: 100%;
-  background-color: #f9fafb;
+  background-color: #f7f1e8;
   background-image: 
-    radial-gradient(circle at 100% 0%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 0% 100%, rgba(147, 51, 234, 0.1) 0%, transparent 50%);
+    radial-gradient(circle at 100% 0%, rgba(217, 183, 112, 0.16) 0%, transparent 50%),
+    radial-gradient(circle at 0% 100%, rgba(194, 135, 63, 0.14) 0%, transparent 50%);
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 1;
 }
 
 .main {
-  flex: 1;
   width: 100%;
-  padding: 6rem 0 0;
+  padding: 4.75rem 0 0;
   box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
 }
 
 .section {
   width: 100%;
-  padding: 0 2rem 4rem;
-  scroll-margin-top: 6rem;
+  padding: 0 1.75rem 1.75rem;
+  margin: 0;
+  scroll-margin-top: 5.5rem;
+}
+
+.section > * {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.75rem;
+  width: 100%;
   box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
   .main {
-    padding: 5rem 0 0;
+    padding: 4rem 0 0;
   }
   
   .section {
-    padding: 0 1rem 2rem;
-    scroll-margin-top: 5rem;
+    padding: 0 1rem 1.5rem;
+    scroll-margin-top: 4.5rem;
+  }
+
+  .section > * {
+    max-width: 1100px;
+    padding: 0 1rem;
   }
 } 

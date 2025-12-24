@@ -6,20 +6,17 @@ export const Header = () => {
 
   const navLinks = [
     { href: '#about', label: 'About' },
+    { href: '#news', label: 'News' },
+    { href: '#publications', label: 'Publications' },
     { href: '#work', label: 'Work Experience' },
     { href: '#projects', label: 'Projects' },
-    { href: '#publications', label: 'Publications' },
-    { href: '#resume', label: 'Resume' },
   ]
 
   return (
     <header className="header">
       <nav className="header-container">
         <div className="header-content">
-          <div>
-            <h1 className="header-title">Lianghan (Austing) Dong</h1>
-            <p className="header-subtitle">Explainable AI & Generative Research</p>
-          </div>
+          <div className="header-mark" aria-hidden="true" />
           
           <button
             className="mobile-menu-button"

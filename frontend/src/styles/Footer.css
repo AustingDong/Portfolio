@@ -1,13 +1,12 @@
 .footer {
-  background: linear-gradient(to bottom, #111827, #1f2937);
-  color: white;
+  background: linear-gradient(to bottom, #2c2418, #3a2f1f);
+  color: #f2e6d4;
   padding: 3rem 0;
   width: 100%;
   margin-top: auto;
 }
 
 .footer-container {
-  max-width: 72rem;
   width: 100%;
   margin: 0 auto;
   padding: 0 1rem;
@@ -31,13 +30,13 @@
 }
 
 .social-link {
-  color: #9ca3af;
+  color: #e6d7bd;
   transition: all 0.3s;
   transform-origin: center;
 }
 
 .social-link:hover {
-  color: white;
+  color: #d9b770;
   transform: scale(1.1) rotate(3deg);
 }
 
@@ -49,6 +48,6 @@
 .copyright {
   text-align: center;
   margin-top: 2rem;
-  color: #9ca3af;
+  color: #e6d7bd;
   font-size: 0.875rem;
-} 
+}
