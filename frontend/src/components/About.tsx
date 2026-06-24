@@ -1,73 +1,80 @@
-import "../styles/About.css";
+import '../styles/About.css'
+
+const CV_URL = `${import.meta.env.BASE_URL}files/Austing_Dong_CV.pdf`
+const RESUME_URL = `${import.meta.env.BASE_URL}files/Austing_Dong_Resume.pdf`
+
+const links = [
+  { label: 'Google Scholar', href: 'https://scholar.google.ca/citations?user=6ksXb7cAAAAJ&hl=en' },
+  { label: 'GitHub', href: 'https://github.com/AustingDong' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/lianghan-dong-000319263/' },
+  { label: 'Email', href: 'mailto:austingdong@gmail.com' },
+  { label: 'CV', href: CV_URL },
+  { label: 'Résumé', href: RESUME_URL },
+]
+
+const skills = [
+  { label: 'Languages', items: 'Python · C · C++ · Java · R · SQL · JavaScript · TypeScript' },
+  { label: 'AI / ML', items: 'PyTorch · TensorFlow · LangChain · vLLM · NumPy · Pandas · OpenCV' },
+  { label: 'Frameworks', items: 'React + TypeScript · Vue · Spring Boot · FastAPI · Flask' },
+]
 
 export const About = () => {
-  const keywords = [
-    "Multimodal Models",
-    "Natural Language Processing",
-    "Machine Learning",
-  ];
-
   return (
     <div className="about">
-      <h2 className="about-header">About Me</h2>
-      <div className="about-main">
-        <div className="about-photo">
-          <div className="photo-container">
-            <img src="images/head.png" alt="Lianghan (Austing) Dong" />
+      <div className="about-grid">
+        <div className="about-intro">
+          <h1 className="about-name">
+            Austing <span className="about-name-last">Dong</span>
+          </h1>
+          <p className="about-affiliation">
+            Lianghan Dong · B.CS (Co-op), University of Waterloo
+          </p>
+          <p className="about-text">
+            I study machine learning and multimodal models, focusing on
+            understanding and steering model behavior: attention-guided
+            visualization of vision–language model reasoning (AG-CAM,
+            published in IEEE TVCG), empirical analysis of model
+            specialization — how the gap between few-shot prompting and
+            fine-tuning scales with model size and pretraining — and
+            interactive, human-in-the-loop training methods for
+            vision–language models.
+          </p>
+          <p className="about-text">
+            I enjoy building practical research tools and demos that explore
+            new ways for humans to see, correct, and guide AI systems during
+            training and inference. I am currently seeking PhD opportunities
+            in machine learning, multimodal models, and human-centered AI.
+          </p>
+          <div className="about-links">
+            {links.map((link, i) => (
+              <span key={link.label}>
+                {i > 0 && <span className="about-links-sep"> / </span>}
+                <a href={link.href} target="_blank" rel="noreferrer">
+                  {link.label}
+                </a>
+              </span>
+            ))}
           </div>
         </div>
-        <div className="about-content">
-          <div className="about-identity">
-            <h3 className="about-name">Lianghan (Austing) Dong</h3>
-            <p className="about-school">
-              Bachelor of Computer Science (Co-op), University of Waterloo
-            </p>
-            <p className="about-email">austingdong@gmail.com</p>
-            <div className="about-links">
-              <a
-                href="https://github.com/AustingDong"
-                target="_blank"
-                rel="noreferrer"
-              >
-                GitHub
-              </a>
-              <a
-                href="https://scholar.google.ca/citations?user=6ksXb7cAAAAJ&hl=en"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Google Scholar
-              </a>
-              <a
-                href="https://www.linkedin.com/in/lianghan-dong-000319263/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                LinkedIn
-              </a>
-              <a href="/resume.pdf" target="_blank" rel="noreferrer">
-                Resume (PDF)
-              </a>
-            </div>
+
+        <figure className="about-figure">
+          <img
+            className="about-photo"
+            src="images/head.png"
+            alt="Portrait of Lianghan (Austing) Dong"
+          />
+          <figcaption className="about-contact">austingdong@gmail.com</figcaption>
+        </figure>
+      </div>
+
+      <dl className="about-skills">
+        {skills.map((row) => (
+          <div key={row.label} className="about-skills-row">
+            <dt className="meta-label">{row.label}</dt>
+            <dd>{row.items}</dd>
           </div>
-        </div>
-      </div>
-      <div className="about-text">
-        I am a Computer Science undergraduate at the University of Waterloo. My
-        research focuses on vision-language models and machine learning, with a
-        particular interest in developing transparent and interactive training
-        methods that encourage strong high-level reasoning in AI systems. I
-        enjoy building practical research tools and demos that explore new ways
-        for humans to guide and collaborate with AI models during training and
-        reasoning.
-      </div>
-      <div className="keywords">
-        {keywords.map((keyword) => (
-          <span key={keyword} className="keyword">
-            {keyword}
-          </span>
         ))}
-      </div>
+      </dl>
     </div>
-  );
-};
+  )
+}

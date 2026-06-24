@@ -1,143 +1,115 @@
 .header {
-  background: linear-gradient(to right, #f7f1e8, #f2e6d4, rgba(247, 241, 232, 0.9));
-  backdrop-filter: blur(8px);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
-  border-bottom: 1px solid #e6d7bd;
-  width: 100%;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.92);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--hairline);
 }
 
 .header-container {
-  max-width: 72rem;
-  width: 100%;
+  max-width: 940px;
   margin: 0 auto;
-  padding: 1rem 1.5rem;
-  box-sizing: border-box;
-}
-
-.header-content {
+  padding: 0.75rem 2rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
 }
 
-.header-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  background: linear-gradient(to right, #c2873f, #d9b770, #8b6b3a);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.header-brand {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--ink);
 }
 
-.header-mark {
-  width: 32px;
-  height: 32px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #c2873f, #8b6b3a);
-  box-shadow: 0 8px 20px rgba(194, 135, 63, 0.2);
+.header-brand:hover {
+  color: var(--ink);
 }
 
-.header-subtitle {
-  font-size: 0.875rem;
-  color: #5b4632;
-  margin-top: 0.25rem;
-  font-weight: 500;
+.header-brand-last {
+  color: var(--accent);
 }
 
 .nav-links {
   display: flex;
-  gap: 2rem;
+  align-items: center;
+  gap: 1.3rem;
 }
 
 .nav-link {
-  color: #5b4632;
-  font-weight: 600;
-  text-decoration: none;
-  position: relative;
-  padding: 0.5rem 0;
+  font-size: 0.92rem;
+  color: var(--text);
+  padding: 0.15rem 0;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
 
 .nav-link:hover {
-  color: #c2873f;
+  color: var(--accent);
+  border-bottom-color: var(--accent);
 }
 
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(to right, #c2873f, #d9b770);
-  transition: width 0.3s ease;
-}
-
-.nav-link:hover::after {
-  width: 100%;
+.nav-cv {
+  color: var(--accent);
+  font-weight: 600;
 }
 
 .mobile-menu-button {
   display: none;
-  padding: 0.375rem;
-  border-radius: 0.5rem;
-  background: transparent;
-  border: none;
+  background: none;
+  border: 1px solid var(--hairline-strong);
+  border-radius: 4px;
+  padding: 0.3rem;
+  color: var(--ink);
   cursor: pointer;
 }
 
 .mobile-menu-button:hover {
-  background-color: #f0e4cf;
+  border-color: var(--accent);
 }
 
 .mobile-menu-icon {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1.3rem;
+  height: 1.3rem;
+  display: block;
 }
 
 .mobile-nav {
   display: none;
-  margin-top: 1rem;
-  background-color: rgba(247, 241, 232, 0.9);
-  backdrop-filter: blur(8px);
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
-  border: 1px solid #e6d7bd;
 }
 
-.mobile-nav-link {
-  display: block;
-  color: #5b4632;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 0.75rem 1rem;
-  border-radius: 0.375rem;
-}
-
-.mobile-nav-link:hover {
-  color: #c2873f;
-  background-color: #f0e4cf;
-}
-
-@media (max-width: 768px) {
-  .mobile-menu-button {
-    display: block;
-  }
-
+@media (max-width: 880px) {
   .nav-links {
     display: none;
   }
 
-  .mobile-nav {
+  .mobile-menu-button {
     display: block;
   }
 
-  .header-container {
-    padding: 1rem;
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--hairline);
+    padding: 0.4rem 2rem 0.8rem;
+    background: rgba(255, 255, 255, 0.98);
   }
-} 
+
+  .mobile-nav-link {
+    font-size: 1rem;
+    color: var(--text);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .mobile-nav-link:last-child {
+    border-bottom: none;
+    color: var(--accent);
+    font-weight: 600;
+  }
+}

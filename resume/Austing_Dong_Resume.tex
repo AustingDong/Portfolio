@@ -1,0 +1,144 @@
+% Austing Dong — One-page industry resume
+% Uses only base LaTeX + xcolor + hyperref, so it compiles on minimal installs
+% and in Overleaf alike.
+\documentclass[10pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+
+\input{times-manual} % Times via manual font declarations
+
+\definecolor{accent}{HTML}{1A5A8C}
+\definecolor{rulegray}{HTML}{C8CCD0}
+\definecolor{mutedgray}{HTML}{5A6066}
+
+% Clickable links via pdfTeX primitives (hyperref unavailable on this install)
+\newcommand{\href}[2]{%
+  \leavevmode
+  \pdfstartlink user{/Subtype /Link /Border [0 0 0] /A << /S /URI /URI (#1) >>}%
+  \textcolor{accent}{#2}%
+  \pdfendlink}
+
+% ---- Manual page geometry (letter, 0.55in margins) ----
+\pdfpagewidth=8.5in
+\pdfpageheight=11in
+\setlength{\textwidth}{7.4in}
+\setlength{\oddsidemargin}{-0.45in}
+\setlength{\evensidemargin}{-0.45in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\headheight}{0pt}
+\setlength{\headsep}{0pt}
+\setlength{\textheight}{10in}
+\setlength{\footskip}{0pt}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+% ---- Compact lists ----
+\makeatletter
+\def\@listi{\leftmargin1.2em \itemsep0.1em \parsep0pt \topsep0.2em \partopsep0pt}
+\let\@listI\@listi
+\makeatother
+\renewcommand{\labelitemi}{\textcolor{mutedgray}{$\bullet$}}
+
+% ---- Section heading ----
+\newcommand{\cvsection}[1]{%
+  \par\vspace{0.75em}%
+  {\noindent\normalsize\scshape\color{accent}#1\par}%
+  \vspace{-0.6em}\noindent{\color{rulegray}\rule{\textwidth}{0.6pt}}\par
+  \vspace{0.2em}%
+}
+
+\newcommand{\entry}[2]{\noindent\textbf{#1} \hfill {\small\color{mutedgray}#2}\par}
+\newcommand{\sep}{\;{\color{rulegray}\textbar}\;}
+
+\begin{document}
+
+% ---------- Header ----------
+\begin{center}
+  {\LARGE\scshape Austing (Lianghan) Dong}\\[0.45em]
+  {\small
+    \href{mailto:austingdong@gmail.com}{austingdong@gmail.com}\sep
+    (226) 789-9109\sep
+    \href{https://austingdong.github.io/Portfolio/}{austingdong.github.io/Portfolio}\sep
+    \href{https://github.com/AustingDong}{github.com/AustingDong}\sep
+    \href{https://www.linkedin.com/in/lianghan-dong-000319263/}{LinkedIn}
+  }
+\end{center}
+
+% ---------- Education ----------
+\cvsection{Education}
+\entry{University of Waterloo --- Bachelor of Computer Science (Co-op)}{Sep 2022 -- present (expected 2027)}
+\begin{itemize}
+  \item GPA: 3.7/4.0; President's Scholarship of Distinction; Faculty of Math Entrance Scholarship (\$25{,}000 CAD).
+\end{itemize}
+
+% ---------- Skills ----------
+\cvsection{Skills}
+\noindent\textbf{Languages:} Python, C, C++, Java, R, SQL, JavaScript, TypeScript\par
+\vspace{0.1em}
+\noindent\textbf{AI / ML:} PyTorch, TensorFlow, LangChain, vLLM, NumPy, Pandas, OpenCV\par
+\vspace{0.1em}
+\noindent\textbf{Frameworks \& Cloud:} React/Preact + TypeScript, Vue, Spring Boot, FastAPI, Flask, Redis, MySQL, AWS\par
+
+% ---------- Experience ----------
+\cvsection{Experience}
+\entry{Undergraduate Research Fellow --- University of Waterloo}{May 2026 -- Present}
+\begin{itemize}
+  \item Investigating how the gap between few-shot prompting and fine-tuning scales with LLM size and pretraining, benchmarking open model families (GPT-2, Qwen) across a multi-task benchmark.
+\end{itemize}
+
+\vspace{0.35em}
+\entry{Undergraduate Research Fellow --- University of Waterloo}{Sep 2025 -- Dec 2025}
+\begin{itemize}
+  \item Fine-tuned vision--language models with attention regularization and human-labeled supervision; built attention visualization and labeling interfaces for multimodal transformers.
+\end{itemize}
+
+\vspace{0.3em}
+\entry{Undergraduate Research Fellow --- University of Waterloo}{Jan 2025 -- Apr 2025}
+\begin{itemize}
+  \item Published a first-author paper in IEEE TVCG (IEEE VIS 2025) introducing AG-CAM, an attention-guided framework for interpreting vision--language model reasoning.
+  \item Built ChartPADs, a multi-agent LLM pipeline (GPT-4o, Gemini 2.5 Pro) for persona-adaptive chart explanations; a 50-participant study showed +22\% comprehension accuracy and +24\% perceived clarity.
+\end{itemize}
+
+\vspace{0.3em}
+\entry{Data Analyst Intern --- Microsoft}{Jan 2024 -- Apr 2024}
+\begin{itemize}
+  \item Designed classification pipelines for anomaly detection on Windows Defender and Azure error logs, improving early failure detection by over 15\%; automated reporting pipelines for reliability metrics.
+\end{itemize}
+
+\vspace{0.3em}
+\entry{Software Developer --- YSAIT}{Sep 2023 -- Dec 2023}
+\begin{itemize}
+  \item Built backend infrastructure for an AI-driven e-learning platform (Flask, GPT-3.5 API); developed an admin dashboard (Spring Boot, MyBatis, Redis, MySQL), cutting API latency by 30\%; deployed on AWS EC2.
+\end{itemize}
+
+% ---------- Projects ----------
+\cvsection{Selected Projects \& Publications}
+\entry{Scotiabank Fraud Detection Challenge --- 1st place among 500+ participants}{Jan 2023}
+\begin{itemize}
+  \item Led a team of 5 to 1st place with a predictive EDA + ML pipeline for financial risk analysis. \href{https://github.com/joeyuh/OToInfinity-Scotiabank-Competition}{[code]}
+\end{itemize}
+
+\vspace{0.3em}
+\entry{Probing the Visualization Literacy of Vision Language Models}{2025}
+\begin{itemize}
+  \item First-author IEEE TVCG paper; evaluated 6 open- and closed-source VLMs (ChartGemma, Janus, LLaVA, GPT-4o, Gemini). \href{https://ieeexplore.ieee.org/document/11261397}{[paper]} \href{https://github.com/AustingDong/Probing-Vis-Literacy-of-VLMs}{[code]}
+\end{itemize}
+
+\vspace{0.3em}
+\entry{NASA Space Apps NLP Hackathon --- Global Nomination}{2022}
+\begin{itemize}
+  \item Built an NLP system for exploring scientific literature; globally nominated (Science Legacy track). \href{https://2022.spaceappschallenge.org/challenges/2022-challenges/science-legacy/teams/0to/project}{[project]}
+\end{itemize}
+
+% ---------- Awards ----------
+\cvsection{Awards}
+\begin{itemize}
+  \item USA Computing Olympiad (USACO) --- Gold Division, full marks (C++) \hfill {\small\color{mutedgray}2021}
+  \item Euclid Math Contest --- Top 1\% \hfill {\small\color{mutedgray}2022}
+  \item Statistics \& Actuarial Science Competition Prize, University of Waterloo \hfill {\small\color{mutedgray}2022}
+\end{itemize}
+
+\end{document}

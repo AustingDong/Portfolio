@@ -1,0 +1,41 @@
+.awards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 2.5rem;
+}
+
+.award-item {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.award-year {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
+  padding-top: 0.15em;
+}
+
+.award-title {
+  font-family: var(--font-sans);
+  font-size: 0.99rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+.award-detail {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--muted);
+  margin-top: 0.2rem;
+}
+
+@media (max-width: 768px) {
+  .awards-grid {
+    grid-template-columns: 1fr;
+  }
+}

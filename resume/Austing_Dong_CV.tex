@@ -1,0 +1,171 @@
+% Austing Dong — Academic CV (PhD applications)
+% Uses only base LaTeX + xcolor + hyperref, so it compiles on minimal installs
+% and in Overleaf alike.
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+
+\input{times-manual} % Times via manual font declarations
+
+\definecolor{accent}{HTML}{1A5A8C}
+\definecolor{rulegray}{HTML}{C8CCD0}
+\definecolor{mutedgray}{HTML}{5A6066}
+
+% Clickable links via pdfTeX primitives (hyperref unavailable on this install)
+\newcommand{\href}[2]{%
+  \leavevmode
+  \pdfstartlink user{/Subtype /Link /Border [0 0 0] /A << /S /URI /URI (#1) >>}%
+  \textcolor{accent}{#2}%
+  \pdfendlink}
+
+% ---- Manual page geometry (letter, 0.6in side margins) ----
+\pdfpagewidth=8.5in
+\pdfpageheight=11in
+\setlength{\textwidth}{7.3in}
+\setlength{\oddsidemargin}{-0.4in}
+\setlength{\evensidemargin}{-0.4in}
+\setlength{\topmargin}{-0.45in}
+\setlength{\headheight}{0pt}
+\setlength{\headsep}{0pt}
+\setlength{\textheight}{9.75in}
+\setlength{\footskip}{0pt}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+% ---- Compact lists ----
+\makeatletter
+\def\@listi{\leftmargin1.3em \itemsep0.18em \parsep0pt \topsep0.3em \partopsep0pt}
+\let\@listI\@listi
+\makeatother
+\renewcommand{\labelitemi}{\textcolor{mutedgray}{$\bullet$}}
+
+% ---- Section heading: small caps, accent color, thin rule ----
+\newcommand{\cvsection}[1]{%
+  \par\vspace{1em}%
+  {\noindent\large\scshape\color{accent}#1\par}%
+  \vspace{-0.6em}\noindent{\color{rulegray}\rule{\textwidth}{0.6pt}}\par
+  \vspace{0.3em}%
+}
+
+% ---- Entries ----
+\newcommand{\entry}[2]{\noindent\textbf{#1} \hfill {\small\color{mutedgray}#2}\par}
+\newcommand{\subentry}[2]{\noindent{\itshape #1} \hfill {\small\color{mutedgray}#2}\par}
+\newcommand{\sep}{\;{\color{rulegray}\textbar}\;}
+
+\begin{document}
+
+% ---------- Header ----------
+\begin{center}
+  {\Huge\scshape Austing (Lianghan) Dong}\\[0.5em]
+  {\small
+    \href{mailto:austingdong@gmail.com}{austingdong@gmail.com}\sep
+    (226) 789-9109\sep
+    \href{https://austingdong.github.io/Portfolio/}{austingdong.github.io/Portfolio}\sep
+    \href{https://github.com/AustingDong}{github.com/AustingDong}\sep
+    \href{https://scholar.google.ca/citations?user=6ksXb7cAAAAJ}{Google Scholar}\sep
+    \href{https://www.linkedin.com/in/lianghan-dong-000319263/}{LinkedIn}
+  }
+\end{center}
+
+% ---------- Research Interests ----------
+\cvsection{Research Interests}
+Machine learning and multimodal models, with a focus on understanding and steering model behavior: interpretability of vision--language model reasoning (attention-guided visualization), empirical analysis of model specialization---how the gap between few-shot prompting and fine-tuning scales with model size and pretraining---and interactive, human-in-the-loop training of VLMs.
+
+% ---------- Education ----------
+\cvsection{Education}
+\entry{University of Waterloo}{Sep 2022 -- present (expected 2027)}
+\subentry{Bachelor of Computer Science (Co-op)}{Waterloo, ON, Canada}
+\begin{itemize}
+  \item GPA: 3.7/4.0.
+  \item President's Scholarship of Distinction; Faculty of Math Entrance Scholarship (\$25{,}000 CAD).
+\end{itemize}
+
+% ---------- Publications ----------
+\cvsection{Publications}
+\begin{enumerate}
+  \item \textbf{Lianghan Dong}, Anamaria Crisan.
+        ``Probing the Visualization Literacy of Vision Language Models: the Good, the Bad, and the Ugly.''
+        \emph{IEEE Transactions on Visualization and Computer Graphics (TVCG), Special Issue for IEEE VIS 2025}.
+        \href{https://ieeexplore.ieee.org/document/11261397}{[paper]}
+        \href{https://github.com/AustingDong/Probing-Vis-Literacy-of-VLMs}{[code]}
+  \item \textbf{Lianghan Dong}.
+        ``Enhancing Image Segmentation for ICH through Transfer Learning from Stroke MRI to ICH CT.''
+        \emph{Proceedings of ICIAAI 2024}.
+        \href{https://www.atlantis-press.com/proceedings/iciaai-24/126004119}{[paper]}
+\end{enumerate}
+
+% ---------- Research Experience ----------
+\cvsection{Research Experience}
+\entry{Undergraduate Research Fellow, University of Waterloo}{May 2026 -- Present}
+\subentry{Advisor: Prof. Yuntian Deng}{Waterloo, Canada}
+\begin{itemize}
+  \item Investigating the performance gap between few-shot prompting and fine-tuning for specializing language models, and whether scaling model size or improving pretraining closes it.
+  \item Benchmarking open model families (GPT-2, Qwen) across sizes on a multi-task benchmark to chart the gap as a function of scale and pretraining recency.
+\end{itemize}
+
+\vspace{0.5em}
+\entry{Undergraduate Research Fellow, University of Waterloo}{Sep 2025 -- Dec 2025}
+\subentry{Advisor: Prof. Yuntian Deng}{Waterloo, Canada}
+\begin{itemize}
+  \item Explored fine-tuning vision--language models with attention regularization and human-labeled supervision to improve controllability and visual interpretability.
+  \item Implemented attention visualization and labeling interfaces for multimodal transformer layers, analyzing head-wise token alignment across image--text pairs.
+\end{itemize}
+
+\vspace{0.5em}
+\entry{Undergraduate Research Fellow, University of Waterloo}{Jan 2025 -- Apr 2025}
+\subentry{Advisor: Prof. Anamaria Crisan}{Waterloo, Canada}
+\begin{itemize}
+  \item First author of a paper accepted to IEEE TVCG (Special Issue for IEEE VIS 2025), introducing AG-CAM, an attention-guided visualization framework for interpreting reasoning in early-fusion VLMs.
+  \item Designed ChartPADs, a persona-adaptive explanation framework that tailors chart descriptions to users' visualization literacy using an editor--critic multi-agent LLM pipeline (GPT-4o, Gemini 2.5 Pro).
+  \item Conducted a multi-factorial mixed-design user study (50+ participants): personalized explanations improved comprehension accuracy by 22\%, response confidence by 18\%, and perceived clarity by 24\%.
+  \item Built an interactive web platform for explanation comparison and refinement loops.
+\end{itemize}
+
+% ---------- Industry Experience ----------
+\cvsection{Industry Experience}
+\entry{Data Analyst Intern, Microsoft}{Jan 2024 -- Apr 2024}
+\subentry{Cloud reliability analytics}{Hong Kong}
+\begin{itemize}
+  \item Designed classification pipelines for anomaly detection on Windows Defender and Azure error logs, improving early failure detection by over 15\%.
+  \item Conducted full-stack data analysis and automated reporting pipelines for service reliability metrics.
+\end{itemize}
+
+\vspace{0.5em}
+\entry{Software Developer, YSAIT}{Sep 2023 -- Dec 2023}
+\subentry{AI-driven e-learning platform}{Canada}
+\begin{itemize}
+  \item Built backend infrastructure for an AI-driven e-learning platform using Flask and the GPT-3.5 API.
+  \item Developed an admin dashboard (Spring Boot, MyBatis, Redis, MySQL); reduced API response latency by 30\% through caching and async pipelines; deployed on AWS EC2.
+\end{itemize}
+
+% ---------- Awards ----------
+\cvsection{Awards \& Honors}
+\begin{itemize}
+  \item \textbf{Undergraduate Student Research Award (USRA)}, University of Waterloo \hfill {\small\color{mutedgray}2026}
+  \item \textbf{1st Place}, Scotiabank Data Science Discovery Days (team of 5, 500+ participants) \hfill {\small\color{mutedgray}2023}
+  \item \textbf{Top 1\%}, Euclid Math Contest (University of Waterloo CEMC) \hfill {\small\color{mutedgray}2022}
+  \item \textbf{Gold Division, Full Marks}, USA Computing Olympiad (USACO), competed in C++ \hfill {\small\color{mutedgray}2021}
+  \item President's Scholarship of Distinction, University of Waterloo \hfill {\small\color{mutedgray}2022}
+  \item Faculty of Math Entrance Scholarship (\$25{,}000 CAD), University of Waterloo \hfill {\small\color{mutedgray}2022}
+  \item Statistics \& Actuarial Science Competition Prize, University of Waterloo \hfill {\small\color{mutedgray}2022}
+\end{itemize}
+
+% ---------- Service & Activities ----------
+\cvsection{Service \& Activities}
+\begin{itemize}
+  \item Student Volunteer, IEEE VIS 2025, Vienna, Austria \hfill {\small\color{mutedgray}Nov 2025}
+  \item Participant, Google--UWaterloo Futures Lab (Fall 2025 cohort) \hfill {\small\color{mutedgray}Oct -- Dec 2025}
+\end{itemize}
+
+% ---------- Skills ----------
+\cvsection{Technical Skills}
+\noindent\textbf{Languages:} Python, C, C++, Java, R, SQL, JavaScript, TypeScript\par
+\vspace{0.15em}
+\noindent\textbf{AI / ML:} PyTorch, TensorFlow, LangChain, vLLM, NumPy, Pandas, OpenCV\par
+\vspace{0.15em}
+\noindent\textbf{Frameworks:} React/Preact with TypeScript, Vue, Spring Boot, FastAPI, Flask\par
+
+\end{document}

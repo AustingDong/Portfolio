@@ -1,49 +1,61 @@
+import type { ReactNode } from 'react'
+import { SectionHeading } from './SectionHeading'
 import '../styles/News.css'
 
 interface NewsItem {
-  title: string
   date: string
-  summary: string
-  link?: string
+  text: ReactNode
 }
 
 const newsItems: NewsItem[] = [
-  
   {
-    title: 'CHI 2025 submission in progress',
-    date: 'Sep 2025',
-    summary: 'Preparing CHI 2025 submission on personalized explainability for data visualizations.',
-    link: '#'
+    date: 'May 2026',
+    text: 'Started a second research term with Prof. Yuntian Deng, studying how the gap between few-shot prompting and fine-tuning scales with model size and pretraining.',
   },
   {
-    title: 'IEEE VIS 2025 paper accepted',
-    date: 'July 2025',
-    summary: 'AG-CAM work on chart-based VQA accepted to IEEE VIS 2025 with new evaluation results.',
-    link: 'https://www.linkedin.com/posts/amcrisan_probing-the-visualization-literacy-of-vision-activity-7351253409389281281-VRdD?utm_source=share&utm_medium=member_desktop&rcm=ACoAAECnIcABKjbiPShjBA4GoOoxhKSYC1Jx7U4'
-  }
+    date: 'Nov 2025',
+    text: 'Served as a student volunteer at IEEE VIS 2025 in Vienna, Austria.',
+  },
+  {
+    date: 'Oct 2025',
+    text: 'Selected for the Fall 2025 cohort of the Google–UWaterloo Futures Lab.',
+  },
+  {
+    date: 'Sep 2025',
+    text: 'Started a research fellowship with Prof. Yuntian Deng on interactive, human-in-the-loop fine-tuning of vision–language models.',
+  },
+  {
+    date: 'Jul 2025',
+    text: (
+      <>
+        First-author paper{' '}
+        <a
+          href="https://ieeexplore.ieee.org/document/11261397"
+          target="_blank"
+          rel="noreferrer"
+        >
+          “Probing the Visualization Literacy of Vision Language Models”
+        </a>{' '}
+        accepted to IEEE TVCG (Special Issue for IEEE VIS 2025).
+      </>
+    ),
+  },
 ]
 
 export const News = () => {
   return (
     <div className="news">
-      <h2 className="news-header">News</h2>
-      <ul className="news-list">
-        {newsItems.map((item, index) => (
-          <li key={index} className="news-item">
-            <div className="news-line">
-              <span className="news-date">{item.date}</span>
-              <span className="news-title">{item.title}</span>
-            </div>
-            <p className="news-summary">{item.summary}</p>
-            {item.link && (
-              <a className="news-link" href={item.link} target="_blank" rel="noreferrer">
-                Read more →
-              </a>
-            )}
-          </li>
-        ))}
-      </ul>
+      <SectionHeading title="News" />
+      <table className="news-table">
+        <tbody>
+          {newsItems.map((item, index) => (
+            <tr key={index} className="news-row">
+              <td className="news-date">{item.date}</td>
+              <td className="news-text">{item.text}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   )
 }
-

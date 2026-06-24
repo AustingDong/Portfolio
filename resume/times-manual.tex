@@ -1,0 +1,21 @@
+% Manual Times (ptm) setup — this MiKTeX install lacks psnfss, so we declare
+% the font shapes and pdftex map lines ourselves. On a full TeX Live/Overleaf
+% install you can delete this file and load \usepackage{newtxtext} instead.
+\DeclareFontFamily{T1}{ptm}{}
+\DeclareFontShape{T1}{ptm}{m}{n}{<-> ptmr8t}{}
+\DeclareFontShape{T1}{ptm}{b}{n}{<-> ptmb8t}{}
+\DeclareFontShape{T1}{ptm}{m}{it}{<-> ptmri8t}{}
+\DeclareFontShape{T1}{ptm}{b}{it}{<-> ptmbi8t}{}
+\DeclareFontShape{T1}{ptm}{m}{sc}{<-> ptmrc8t}{}
+\DeclareFontShape{T1}{ptm}{bx}{n}{<->ssub * ptm/b/n}{}
+\DeclareFontShape{T1}{ptm}{bx}{it}{<->ssub * ptm/b/it}{}
+\DeclareFontShape{T1}{ptm}{b}{sc}{<->ssub * ptm/m/sc}{}
+\DeclareFontShape{T1}{ptm}{bx}{sc}{<->ssub * ptm/m/sc}{}
+\DeclareFontShape{T1}{ptm}{m}{sl}{<->ssub * ptm/m/it}{}
+\renewcommand{\rmdefault}{ptm}
+\pdfmapline{+ptmr8t NimbusRomNo9L-Regu "ECEncoding ReEncodeFont" <ec.enc <utmr8a.pfb}
+\pdfmapline{+ptmb8t NimbusRomNo9L-Medi "ECEncoding ReEncodeFont" <ec.enc <utmb8a.pfb}
+\pdfmapline{+ptmri8t NimbusRomNo9L-ReguItal "ECEncoding ReEncodeFont" <ec.enc <utmri8a.pfb}
+\pdfmapline{+ptmbi8t NimbusRomNo9L-MediItal "ECEncoding ReEncodeFont" <ec.enc <utmbi8a.pfb}
+% ptmrc8t (small caps) is a virtual font built on the raw 8r-encoded font:
+\pdfmapline{+ptmr8r NimbusRomNo9L-Regu "TeXBase1Encoding ReEncodeFont" <8r.enc <utmr8a.pfb}
