@@ -30,7 +30,7 @@ const newsItems: NewsItem[] = [
       <>
         First-author paper{' '}
         <a
-          href="https://ieeexplore.ieee.org/document/11261397"
+          href="https://ieeexplore.ieee.org/abstract/document/11261397"
           target="_blank"
           rel="noreferrer"
         >
