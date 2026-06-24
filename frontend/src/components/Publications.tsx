@@ -25,7 +25,7 @@ const publications: Publication[] = [
     description:
       'Introduces AG-CAM, an attention-guided class-activation-map adaptation for early-fusion models, to visualize and interpret how VLMs reason over chart-related questions. Evaluated across six open- and closed-source VLMs.',
     authors: 'Lianghan Dong, Anamaria Crisan',
-    thumbnail: `${BASE}images/papers/agcam.png`,
+    thumbnail: `${BASE}images/papers/probing_vlms.png`,
     link: 'https://ieeexplore.ieee.org/abstract/document/11261397',
     codeLink: 'https://github.com/AustingDong/Probing-Vis-Literacy-of-VLMs',
   },
